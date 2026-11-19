@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #263248;
+        }
+
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #172554;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 40px;
+            font-size: 21px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover {
+            background: #334b85;
+        }
+
+        .main-content {
+            margin-left: 230px;
+            padding: 35px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #68758b;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid #3b82f6;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            font-size: 30px;
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Subscription Admin</h2>
+
+        <a href="/admin">Dashboard</a>
+        <a href="/customers">Customers</a>
+        <a href="/subscriptions">Subscriptions</a>
+        <a href="/usage-records">Usage Records</a>
+        <a href="/payments">Payments</a>
+        <a href="/login">Logout</a>
+    </div>
+
+    <div class="main-content">
+
+        <div class="header">
+            <h1>Admin Dashboard</h1>
+            <p>Welcome to the Customer Subscription Management Platform.</p>
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div class="card">
+                <h3>Total Customers</h3>
+                <h2 th:text="${totalCustomers}">0</h2>
+                <p>Registered customers</p>
+            </div>
+
+            <div class="card">
+                <h3>Active Subscriptions</h3>
+                <h2 th:text="${activeSubscriptions}">0</h2>
+                <p>Currently active subscriptions</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <h2>₹<span th:text="${totalRevenue}">0</span></h2>
+                <p>Total payment amount</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Usage Records</h3>
+                <h2 th:text="${totalUsageRecords}">0</h2>
+                <p>Recorded customer usage</p>
+            </div>
+
+<!-- Basic Plan -->
+<div class="card">
+    <h3>Basic Plan</h3>
+    <h2 th:text="${basicCount}">0</h2>
+    <p>Basic plan subscribers</p>
+</div>
+
+<!-- Standard Plan -->
+<div class="card">
+    <h3>Standard Plan</h3>
+    <h2 th:text="${standardCount}">0</h2>
+    <p>Standard plan subscribers</p>
+</div>
+
+<!-- Premium Plan -->
+<div class="card">
+    <h3>Premium Plan</h3>
+    <h2 th:text="${premiumCount}">0</h2>
+    <p>Premium plan subscribers</p>
+</div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

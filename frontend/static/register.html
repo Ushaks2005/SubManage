@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubManage | Create Account</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/js/register.js" defer></script>
+</head>
+<body>
+
+<div class="register-container">
+
+    <div class="register-left">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+            <h2>SubManage</h2>
+        </div>
+
+        <div class="welcome-content">
+            <h1>Manage Your Subscriptions Smarter.</h1>
+            <p>Create your account to explore subscription plans,
+                track usage, manage payments and monitor your services
+                in one place.</p>
+        </div>
+
+        <div class="footer-text">
+            © 2026 SubManage. All rights reserved.
+        </div>
+    </div>
+
+    <div class="register-right">
+        <div class="register-box">
+
+            <h2>Create Account</h2>
+            <p class="subtitle">Join SubManage today.</p>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone"
+                           placeholder="Enter your phone number"
+                           pattern="[0-9]{10,15}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password"
+                           placeholder="Create a password"
+                           minlength="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                           placeholder="Confirm your password"
+                           minlength="8" required>
+                </div>
+
+                <p id="errorMessage" class="error-message"></p>
+                <p id="successMessage" class="success-message"></p>
+
+                <button type="submit" id="registerButton">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="/login.html">Sign In</a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
